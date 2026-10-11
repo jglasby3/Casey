@@ -148,6 +148,36 @@
       color: var(--green);
     }
 
+    /* Slideshow */
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: 30px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from { opacity: .4 }
+      to { opacity: 1 }
+    }
+
     .signature {
       margin-top: 22px;
       text-align: right;
@@ -230,8 +260,32 @@
       </p>
     </section>
 
+    <!-- ⭐ SLIDESHOW WITH YOUR EXACT FILENAMES ⭐ -->
+    <div class="slideshow-container">
+
+      <div class="slide fade"><img src="U5bz6Br2VL4yjo2LCN2jd.jpeg"></div>
+      <div class="slide fade"><img src="yVPYpzzAkSByBcA5GGwWo.jpeg"></div>
+      <div class="slide fade"><img src="B69tSHcyE9fL9bGWKJZaz.jpeg"></div>
+      <div class="slide fade"><img src="x7VzAFhYp5TR4FD2iRzpi.jpeg"></div>
+      <div class="slide fade"><img src="gSGzvfDBKioLJBpD3z2SZ.jpeg"></div>
+      <div class="slide fade"><img src="KSht4sNDf9gct1cqU2deP.jpeg"></div>
+      <div class="slide fade"><img src="E3qcC3rxEGm9n2JhHdKuc.jpeg"></div>
+      <div class="slide fade"><img src="ppG8VVczDdd4Ze6rYwhon.jpeg"></div>
+      <div class="slide fade"><img src="Jj6SBJNaoUqBzD5mzX6rx.jpeg"></div>
+      <div class="slide fade"><img src="MJvTk9s3kUC9egSbNNAZa.jpeg"></div>
+      <div class="slide fade"><img src="VLRvgiPAwJoH2NXYtRoJ2.jpeg"></div>
+      <div class="slide fade"><img src="2gSsVGJxrhRqiRo6qyt82.jpeg"></div>
+      <div class="slide fade"><img src="v6AP57HbvLfsFy7n6UdyQ.jpeg"></div>
+      <div class="slide fade"><img src="BdP6sXPB7mkX2LdV7xUh9.jpeg"></div>
+      <div class="slide fade"><img src="Pv1WDvSM7gk4tiSgRdvvw.jpeg"></div>
+      <div class="slide fade"><img src="qsb7JerAE9XcyLV6uqY6B.jpeg"></div>
+      <div class="slide fade"><img src="npwHR7E2yJYRdvemMXvT4.jpeg"></div>
+      <div class="slide fade"><img src="fc374VRcMpTe8yaQsLPWC.jpeg"></div>
+
+    </div>
+
     <div class="signature">
-      I love you infinitly,
+      With all my love,
       <span>Jacob Glasby</span>
     </div>
 
@@ -239,5 +293,22 @@
       (If you're reading this, I'm thinking about you.)
     </div>
   </main>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+
 </body>
 </html>
